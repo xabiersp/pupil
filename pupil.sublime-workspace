@@ -1,0 +1,831 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Co",
+				"ConcurrenceDate"
+			],
+			[
+				"c",
+				"callee"
+			],
+			[
+				"valid",
+				"validations"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"reu",
+				"required"
+			],
+			[
+				"cour",
+				"course_date"
+			],
+			[
+				"Cours",
+				"CourseDate"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"cou",
+				"courses"
+			],
+			[
+				"re",
+				"render"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"val",
+				"validators"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"in",
+				"indexOf"
+			],
+			[
+				"form",
+				"form"
+			],
+			[
+				"course",
+				"course_form"
+			],
+			[
+				"di",
+				"dialogObject"
+			],
+			[
+				"b",
+				"blackout"
+			],
+			[
+				"dialog",
+				"dialog_blackout"
+			],
+			[
+				"send",
+				"sendResponse"
+			],
+			[
+				"for",
+				"form"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"class",
+				"class_form"
+			],
+			[
+				"ob",
+				"dialogObject"
+			],
+			[
+				"_",
+				"_getData"
+			],
+			[
+				"metho",
+				"methods"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"dia",
+				"dialogObject"
+			],
+			[
+				"dlg",
+				"dlg_body"
+			],
+			[
+				"h",
+				"html"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"jq",
+				"jqXHR"
+			],
+			[
+				"widg",
+				"widgets"
+			],
+			[
+				"forms",
+				"form-class"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"d",
+				"dialogObject"
+			],
+			[
+				"ap",
+				"append"
+			],
+			[
+				"err",
+				"errorThrown"
+			],
+			[
+				"_getData",
+				"_getDataSuccess"
+			],
+			[
+				"dl",
+				"dlg_body"
+			],
+			[
+				"dlg_",
+				"dlg_header"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"btn",
+				"btn"
+			],
+			[
+				"o",
+				"oauth_id"
+			],
+			[
+				"oa",
+				"oauth_active"
+			],
+			[
+				"ge",
+				"gender"
+			],
+			[
+				"oauth",
+				"oauth_id"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"fb",
+				"fbId"
+			],
+			[
+				"red",
+				"redirec"
+			],
+			[
+				"app",
+				"appId"
+			],
+			[
+				"table-",
+				"table-row"
+			],
+			[
+				"__",
+				"__init__"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"w",
+				"widget"
+			],
+			[
+				"std",
+				"stdout	(attribute, instance)"
+			],
+			[
+				"Capture",
+				"CaptureSource	(global, class)"
+			],
+			[
+				"T",
+				"Thread"
+			],
+			[
+				"st",
+				"stderr	(attribute, instance)"
+			],
+			[
+				"pi",
+				"PIPE"
+			],
+			[
+				"P",
+				"PIPE	(imported, instance)"
+			],
+			[
+				"ffm",
+				"ffmpeg_started	(global, instance)"
+			],
+			[
+				"shot",
+				"shot_idx"
+			],
+			[
+				"STY",
+				"STYLUS_BIN"
+			],
+			[
+				"encode",
+				"encoded_track"
+			],
+			[
+				"enc",
+				"encoding"
+			],
+			[
+				"enco",
+				"encoded_follow"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/stylesheets/style.styl",
+			"settings":
+			{
+				"buffer_size": 4131,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 3583,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "entities/eCourse.js",
+			"settings":
+			{
+				"buffer_size": 1128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "entities/models.js",
+			"settings":
+			{
+				"buffer_size": 1876,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/jquery.dialog.js",
+			"settings":
+			{
+				"buffer_size": 5344,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/rooms.jade",
+			"settings":
+			{
+				"buffer_size": 486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/course.jade",
+			"settings":
+			{
+				"buffer_size": 294,
+				"line_ending": "Unix",
+				"name": "extend layout"
+			}
+		},
+		{
+			"file": "views/course_edit.jade",
+			"settings":
+			{
+				"buffer_size": 58,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"Stylus",
+				"Set Syntax: Stylus"
+			],
+			[
+				"",
+				"Set Syntax: Stylus"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Javier/Documents/node/pupil/entities/forms.js",
+		"/Users/Javier/Documents/node/pupil/views/course_edit",
+		"/Users/Javier/Documents/node/pupil/entities/eStudent",
+		"/Users/Javier/Documents/node/pupil/views/layout.jade",
+		"/Users/Javier/Documents/node/pupil/entities/eUser.js",
+		"/Users/Javier/Documents/node/pupil/entities/models.js",
+		"/Users/Javier/Documents/node/pupil/views/home.jade",
+		"/Users/Javier/Documents/node/pupil/entities/eCourse.js",
+		"/Users/Javier/Documents/node/pupil/models.js",
+		"/Users/Javier/Documents/node/pupil/public/js/jquery.dialog.js",
+		"/Users/Javier/Documents/node/pupil/views/forms/form-class.jade",
+		"/Users/Javier/Documents/node/pupil/forms-definitions.js",
+		"/Users/Javier/Documents/node/pupil/user.js",
+		"/Users/Javier/Documents/node/pupil/course.js",
+		"/Users/Javier/Documents/node/pupil/views/rooms.jade",
+		"/Users/Javier/Documents/node/pupil/room.js",
+		"/Users/Javier/Documents/node/pupil/package.json",
+		"/Users/Javier/Documents/node/pupil/public/js/frontend.js",
+		"/Users/Javier/Documents/node/pupil/views/index.jade",
+		"/Users/Javier/Documents/node/pupil/app.js",
+		"/Users/Javier/Documents/node/pupil/views/forms/form-student.jade",
+		"/Users/Javier/Documents/node/pupil/public/js/pupil-frontend-engine-0.1.js",
+		"/Users/Javier/Documents/node/pupil/views/fb-login.jade",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Javier/Documents/node/pupil/views/channel.jade",
+		"/Users/Javier/Documents/node/pupil/public/js/jquery.facebook.js",
+		"/Users/Javier/Documents/node/pupil/public/js/prefixfree.js",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Javier/Documents/node/pupil/public/stylesheets/style.styl",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/SublimeRope/SublimeRope.sublime-settings",
+		"/Users/Javier/Documents/node/pupil/packaje.json",
+		"/Users/Javier/Desktop/nv_data.bin",
+		"/Users/Javier/Desktop/gui_python/main.py",
+		"/Users/Javier/Downloads/OpenCV-2.4.0/samples/python2/example.py",
+		"/Users/Javier/Downloads/OpenCV-2.4.0/samples/python2/video.py",
+		"/Users/Javier/Documents/django/asis/ev_inscripcion/models.py",
+		"/Users/Javier/Documents/django/asis/adm_empresa/models.py",
+		"/Users/Javier/Documents/django/asis/asis/settings.py",
+		"/Users/Javier/Downloads/OpenCV-2.4.0/samples/python2/video_dmtx.py",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/Default (OSX).sublime-keymap",
+		"/Users/Javier/Documents/django/asis/adm_direccion/models.py",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/Javier/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/README.md",
+		"/Users/Javier/Documents/django/asis/ev_evento/models.py",
+		"/Users/Javier/Documents/django/asis/ev_invitacion/models.py",
+		"/Users/Javier/Documents/django/asis/adm_sistema/models.py",
+		"/Users/Javier/Documents/django/asis/adm_persona/models.py",
+		"/Users/Javier/Desktop/Arquitecto de la Universidad Católica de Chile, es",
+		"/Users/Javier/Downloads/backup_data.sql",
+		"/Users/Javier/Downloads/lusentis-django-stylus-d5f968d/stylus/compiler.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"type",
+			"alert",
+			"clas",
+			"class",
+			"course",
+			"class",
+			"_getData",
+			"bin",
+			"user",
+			"font-w",
+			"btn",
+			"alert",
+			"methods",
+			"btn",
+			":",
+			"birth",
+			"fbSes",
+			"containe",
+			"header",
+			"btn",
+			"aside",
+			"main-con",
+			"inline",
+			"btn",
+			"Person",
+			"person",
+			"Person",
+			"person",
+			"Person",
+			"write",
+			"VideoCapture",
+			"alfonso",
+			"sweet",
+			"Magdalena,,Mas",
+			"magdalena,mas",
+			"magdalena mas",
+			"magdalena",
+			"jos_icare_capacitac",
+			"jos_icare_",
+			"jos_icare_c",
+			"jos_icare_compo",
+			"jos_icare_compone",
+			"{\"in_reply_to_user_id_str\":null,\"contributors\":null,\"text\":\"RT @PleasantValeee: If i text you at night, i will most likely fall asleep without saying goodnight \\ud83d\\ude33\\ud83d\\ude01\",\"created_at\":\"Fri Aug 17 22:02:00 +0000 2012\",\"coordinates\":null,\"retweeted\":false,\"truncated\":null,\"entities\":{\"hashtags\":[],\"urls\":[],\"user_mentions\":[{\"indices\":[3,18],\"id_str\":\"236249427\",\"name\":\"Valeriaaa.\",\"screen_name\":\"PleasantValeee\",\"id\":236249427}]},\"in_reply_to_status_id\":null,\"place\":null,\"source\":\"\\u003Ca href=\\\"http:\\/\\/twitter.com\\/download\\/android\\\" rel=\\\"nofollow\\\"\\u003ETwitter for Android\\u003C\\/a\\u003E\",\"retweeted_status\":{\"in_reply_to_user_id_str\":null,\"contributors\":null,\"text\":\"If i text you at night, i will most likely fall asleep without saying goodnight \\ud83d\\ude33\\ud83d\\ude01\",\"created_at\":\"Fri Aug 17 21:51:44 +0000 2012\",\"coordinates\":null,\"retweeted\":false,\"truncated\":null,\"entities\":{\"hashtags\":[],\"urls\":[],\"user_mentions\":[]},\"in_reply_to_status_id\":null,\"place\":null,\"source\":\"\\u003Ca href=\\\"http:\\/\\/twitter.com\\/download\\/iphone\\\" rel=\\\"nofollow\\\"\\u003ETwitter for iPhone\\u003C\\/a\\u003E\",\"favorited\":false,\"id_str\":\"236581100711985154\",\"geo\":null,\"retweet_count\":5,\"in_reply_to_status_id_str\":null,\"user\":{\"created_at\":\"Mon Jan 10 04:26:32 +0000 2011\",\"profile_image_url_https\":\"https:\\/\\/si0.twimg.com\\/profile_images\\/2505548153\\/image_normal.jpg\",\"profile_use_background_image\":true,\"url\":null,\"profile_image_url\":\"http:\\/\\/a0.twimg.com\\/profile_images\\/2505548153\\/image_normal.jpg\",\"friends_count\":873,\"profile_text_color\":\"FA5584\",\"listed_count\":0,\"lang\":\"en\",\"verified\":false,\"profile_background_image_url\":\"http:\\/\\/a0.twimg.com\\/profile_background_images\\/581902077\\/jsaj7onqo4ab4e0j0ei1.jpeg\",\"description\":\"@0ddchris \\\\(^.^)\\/ \\u2764 im a thuggin ass pimp so follow me k? k. c:\",\"follow_request_sent\":null,\"contributors_enabled\":false,\"profile_link_color\":\"000000\",\"location\":\"EA$TSIDE Vegas.\",\"default_profile\":false,\"notifications\":null,\"is_translator\":false,\"following\":null,\"profile_background_image_url_https\":\"https:\\/\\/si0.twimg.com\\/profile_background_images\\/581902077\\/jsaj7onqo4ab4e0j0ei1.jpeg\",\"profile_background_color\":\"000000\",\"followers_count\":2391,\"id_str\":\"236249427\",\"show_all_inline_media\":false,\"profile_background_tile\":false,\"protected\":false,\"statuses_count\":13287,\"profile_sidebar_fill_color\":\"080808\",\"screen_name\":\"PleasantValeee\",\"name\":\"Valeriaaa.\",\"default_profile_image\":false,\"time_zone\":\"Pacific Time (US & Canada)\",\"id\":236249427,\"geo_enabled\":false,\"utc_offset\":-28800,\"favourites_count\":65,\"profile_sidebar_border_color\":\"080808\"},\"id\":236581100711985154,\"in_reply_to_screen_name\":null,\"in_reply_to_user_id\":null},\"favorited\":false,\"id_str\":\"236583682465472512\",\"geo\":null,\"retweet_count\":5,\"in_reply_to_status_id_str\":null,\"user\":{\"created_at\":\"Wed Dec 15 03:00:37 +0000 2010\",\"profile_image_url_https\":\"https:\\/\\/si0.twimg.com\\/profile_images\\/2508787195\\/EWa50E65_normal\",\"profile_use_background_image\":true,\"url\":null,\"profile_image_url\":\"http:\\/\\/a0.twimg.com\\/profile_images\\/2508787195\\/EWa50E65_normal\",\"friends_count\":147,\"profile_text_color\":\"F51111\",\"listed_count\":0,\"lang\":\"en\",\"verified\":false,\"profile_background_image_url\":\"http:\\/\\/a0.twimg.com\\/profile_background_images\\/607038666\\/8e0gjvaorlaf1xgqrjqi.jpeg\",\"description\":\"\",\"follow_request_sent\":null,\"contributors_enabled\":false,\"profile_link_color\":\"EB1717\",\"location\":\"Los Angeles\",\"default_profile\":false,\"notifications\":null,\"is_translator\":false,\"following\":null,\"profile_background_image_url_https\":\"https:\\/\\/si0.twimg.com\\/profile_background_images\\/607038666\\/8e0gjvaorlaf1xgqrjqi.jpeg\",\"profile_background_color\":\"F01313\",\"followers_count\":184,\"id_str\":\"226797093\",\"show_all_inline_media\":false,\"profile_background_tile\":false,\"protected\":false,\"statuses_count\":4246,\"profile_sidebar_fill_color\":\"EFEFEF\",\"screen_name\":\"KailaniBaby\",\"name\":\"Y' Sweet(;\\u270c\\u2764\\u262e\",\"default_profile_image\":false,\"time_zone\":\"Central Time (US & Canada)\",\"id\":226797093,\"geo_enabled\":true,\"utc_offset\":-21600,\"favourites_count\":25,\"profile_sidebar_border_color\":\"EEEEEE\"},\"id\":236583682465472512,\"in_reply_to_screen_name\":null,\"in_reply_to_user_id\":null}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"="
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/stylesheets/style.styl",
+					"settings":
+					{
+						"buffer_size": 4131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3380,
+								3380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stylus/editors/Stylus.tmbundle/Syntaxes/Stylus.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3025.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 3583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1904,
+								1904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1117.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "entities/eCourse.js",
+					"settings":
+					{
+						"buffer_size": 1128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								181
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 38.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "entities/models.js",
+					"settings":
+					{
+						"buffer_size": 1876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1430,
+								1430
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 759.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/js/jquery.dialog.js",
+					"settings":
+					{
+						"buffer_size": 5344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3073,
+								3073
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/rooms.jade",
+					"settings":
+					{
+						"buffer_size": 486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								200,
+								200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/course.jade",
+					"settings":
+					{
+						"buffer_size": 294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								231
+							]
+						],
+						"settings":
+						{
+							"auto_name": "extend layout",
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "views/course_edit.jade",
+					"settings":
+					{
+						"buffer_size": 58,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 265.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,14 @@
+extend layout
+block content
+	.menubar
+		.btn-group			
+			a(href='/student/new/#{course.id}', aspex-action='dialog-open').btn-bar
+				i.add
+				| Add Student
+
+	h2 #{course.name}
+	a(href='/course/#{course.id}/edit') Editar
+	for student in course.students
+		article
+			p #{student.first_name} #{student.last_name}
+	

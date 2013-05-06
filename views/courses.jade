@@ -1,0 +1,23 @@
+extend layout
+block content
+	.menubar
+		.btn-group
+			a(href='/class/new/', aspex-action='dialog-open').btn-bar
+				i.add
+				| Add Class
+			a(href='/student/new/', dialog-action='open').btn-bar
+				i.add
+				| Add Student
+	if courses
+		if courses.length > 0
+			section.courses
+				for course in courses
+					article.course_item
+						a(href='/course/#{course.id}')
+							span.fecha 25 de Marzo
+							h2 #{course.name}
+							p #{course.initial} | #{course.description}
+		else
+			p There's no course
+	else
+		p There's no course

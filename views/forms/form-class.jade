@@ -1,0 +1,8 @@
+.form-content
+	form(action='/class/new', method='post')
+		!= form
+		.field.left
+			a(href='/class/new', dialog-action='open').mini Advance parameters
+		.buttons-bar
+			button(type="button", dialog-action='close').btn.btn-red Close
+			button(type='submit').btn Enviar
