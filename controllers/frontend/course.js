@@ -33,3 +33,7 @@ exports.course = function(req, res){
 		}
 	});
 }
+
+exports.edit = function(req, res){
+	res.send('editing');
+}
