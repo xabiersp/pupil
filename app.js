@@ -11,8 +11,9 @@ var express = require('express')
   , nib = require('nib')  
   , auth = require('connect-auth')
   , FB = require('fb')
-  , courseFrontend = require('./controllers/frontend/course')
-  , studentFrontend = require('./controllers/frontend/student')
+  , courseFrontend = require('./controllers/frontend/front_course')
+  , studentFrontend = require('./controllers/frontend/front_student')
+  , userFrontend = require('./controllers/frontend/front_user')
   , user = require('./entities/eUser')
   , courseApi = require('./controllers/api/course')
   , studentApi = require('./controllers/api/student')
@@ -136,108 +137,12 @@ app.delete('/api/course/:id', courseApi.delete);
 
 //USer
 app.get('/api/user/:id/course', userApi.course);
+app.post('/api/user', userApi.add);
 
 
-function process_form(req, res, instance, callback){
-	var form = eval('forms.' + instance + '_form');	
-	var template = eval('forms/form-' + instance);
-	var title = 'Add new student';
+app.all('/student/new', studentFrontend.add);
 
-	if(req.route.method == 'post'){
-		form.handle(req, {
-			success: callback,
-			error: function(form){
-				res.render(template, {
-					'title': title,
-					'form': form.toHTML()
-				});
-			},
-			empty: function(form){
-				res.render(template, {
-					'title': title,
-					'form': form.toHTML()
-				});
-			}
-		});
-	} else {
-		res.render(template, {
-			'title': title,
-			'form': form.toHTML()
-		});
-	}
-
-}
-
-
-app.all('/student/new', function(req, res){
-	if(req.route.method == 'post'){
-		forms.student_form.handle(req, {
-			success: function(form){
-				var data = {
-					first_name: form.data.first_name,
-					last_name: form.data.last_name,
-					second_last_name: form.data.second_last_name,
-					email: form.data.email
-				};
-				request.post('http://pupil.cl:3000/api/student', {					
-					qs: data
-				}, function(err, response, body){					
-					if(!err && response.statusCode == 200){
-						console.log(body);
-						
-						if(req.xhr){
-							res.render('form-done', {})
-						}
-					} else {
-						console.log(err);
-						res.send(err + ' ' + response.statusCode);
-					}
-				});				
-			},
-			error: function(form){
-				res.render('forms/form-student', {
-					'title': 'Add Student',
-					'form': form.toHTML()
-				});
-			},
-			empty: function(form){
-				res.render('forms/form-student', {
-					'title': 'Add Student',
-					'form': form.toHTML()
-				});
-			}
-		});
-
-	} else {
-		console.log('responding');
-		res.render('forms/form-student', {
-			'title': 'Add new student',
-			'form': forms.student_form.toHTML(),			
-		});
-	}
-});
-
-app.all('/course/new', function(req, res){
-	process_form(req, res, 'course', function(form){
-		var data = {
-			name: form.data.name,
-			description: form.data.description,
-			initials: form.data.initials
-		}
-
-		request.post('http://pupil.cl:3000/api/course', {qs: data}, function(err, response, body){
-			if(!err && response.statusCode == 200){
-				console.log(body);
-
-				if(req.xhr){
-
-				} else {
-
-				}
-			}
-		});
-	});
-});
+app.all('/course/new', courseFrontend.add);
 
 
 

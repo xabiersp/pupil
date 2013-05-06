@@ -1,5 +1,45 @@
 orm = require('orm');
 FB = require('fb');
+crypto = require('crypto');
+
+
+exports.create = function(req, res){
+	var User = req.db.models.user;
+
+	if(!req.query.oauth_active){
+		if(req.query.password && req.query.password != ''){
+			var md5 = crypto.createHash('md5');
+			md5.update(req.query.password, 'utf8');
+			req.query.password = md5.digest('utf8');
+
+			console.log('Password: ' + req.query.password);
+		}
+	}
+
+
+
+
+	User.find({email: req.query.email}, function(err, items){
+		if(!err){
+			if(!items){
+				User.create([req.query], function(err, items){
+
+				});
+			} else {
+				return res.send(items[0]);
+			}
+		} else {
+			console.log(err);
+		}
+	});
+}
+
+exports.find = function(req, res){
+
+}
+
+
+
 
 create_user = function(req, res, params, callback){
 	var User = req.db.models.user;

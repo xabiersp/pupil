@@ -7,17 +7,28 @@ var forms = require('forms')
   , student = require('./eStudent')
 
 
-var course_form = forms.create({
+exports.course_form = forms.create({
 	name: fields.string({required: true}),
 	initial: fields.string({required: true}),
 	description: fields.string({widget: widgets.textarea(), label: 'Descripción'})
 });
 
-var student_form = forms.create({
+exports.student_form = forms.create({
 	first_name: fields.string({required: true}),
 	last_name: fields.string({required: true}),
 	second_last_name: fields.string(),
 	email: fields.email()
+});
+
+exports.user_form = forms.create({
+	first_name: fields.string({required: true}),
+	last_name: fields.string({required: true}),
+	email: fields.string({required: true}),
+	password: fields.password({required: true}),
+	confirm: fields.password({
+		required: true,
+		validators: [validators.matchField('password')]
+	})
 });
 
 var sendForm = function(args){
@@ -92,10 +103,6 @@ var sendForm = function(args){
 	}
 }
 
-
-
-exports.course_form = course_form;
-exports.student_form = student_form;
 exports.sendForm = sendForm;
 
 
