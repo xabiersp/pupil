@@ -247,6 +247,35 @@ ul li
 .left
 	text-align right;
 
+.dropdown
+	display: inline-block
+	position relative;
+	min-width 5em
+	vertical-align bottom
+
+.dropdown > a
+	display block
+
+.dropdown ul
+	display none
+	margin 0
+	padding 0
+
+#dropdown_displayed
+	font-size 0.9em
+	background-color: #fdfdfd;
+	border 1px solid #eee
+
+#dropdown_displayed li
+	padding 0
+	margin 0
+
+#dropdown_displayed li a
+	display block
+	padding 0.3em
+
+#dropdown_displayed li a:hover
+	background-color #f3f3f3
 
 header
 	border-bottom: 1px solid #eee;
@@ -256,13 +285,13 @@ header
 
 header .logo	
 	display inline-block
-	width 20%
+	width 15%
 
 header nav	
 	display inline-block
 	margin auto 0 auto auto
 	text-align right
-	width 90%
+	width 84%
 
 header nav ul
 	display inline-block
@@ -283,6 +312,23 @@ footer
 	text-align center
 	position absolute
 	width: 100%
+
+#easyNotification
+	background-color #f3f3f3;
+	border 1px solid #333;
+	font-size 0.9em
+	padding .4em
+	margin 1em;
+	position relative;
+
+#easyNotification.error
+	background-color rgba(#f00, 0.1);
+	border-color rgba(#f00, 0.2);
+
+#easyNotification .close
+	position absolute;
+	right 1em;
+	cursor: pointer;
 
 #wrapper
 	min-height 100%
