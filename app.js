@@ -100,6 +100,7 @@ app.use(function(req, res, next){
 	next();
 });
 
+
 app.use(express.static(__dirname + '/public'));
 app.use(app.router);
 app.locals.pretty = true;
@@ -137,7 +138,9 @@ app.delete('/api/course/:id', courseApi.delete);
 
 //USer
 app.get('/api/user/:id/course', userApi.course);
-app.post('/api/user', userApi.add);
+app.post('/api/user', userApi.create);
+app.post('/api/user/facebook', userApi.facebook);
+app.post('/api/user/login', userApi.login);
 
 
 app.all('/student/new', studentFrontend.add);

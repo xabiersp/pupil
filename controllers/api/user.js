@@ -1,6 +1,7 @@
 var orm = require('orm')
   , model_name = 'user'
   , crypto = require('crypto')
+  , request = require('request')
 
 
 exports.create = function(req, res){
@@ -20,18 +21,124 @@ exports.create = function(req, res){
 
 	User.find({email: req.query.email}, function(err, items){
 		if(!err){
-			if(!items){
-				User.create([req.query], function(err, items){
-
+			if(items.length == 0){
+				console.log(req.query);
+				User.create([{
+					first_name: req.query.first_name,
+					last_name: req.query.last_name,
+					email: req.query.email,
+					oauth_active: req.query.oauth_active,
+					oauth_provider: req.query.oauth_provider,
+					oauth_id: req.query.oauth_id,
+					gender: req.query.gender,
+					birthday: req.query.birthday
+				}], function(err, items){
+					if(!err){
+						return res.json(items[0]);
+					} else {
+						return res.json(500);
+					}
+					
 				});
 			} else {
-				return res.send(items[0]);
+				return res.json(items[0]);
 			}
 		} else {
+			res.json(400, {error: err});
 			console.log(err);
 		}
 	});
 }
+
+exports.facebook = function(req, res){
+	if(req.query.access_token){
+		FB.setAccessToken(req.query.access_token);
+		FB.api('/me', function(response){
+			if(res && !res.error){
+				var data = {
+					first_name: response.first_name,
+					last_name: response.last_name,
+					email: response.email,
+					birthday: response.birthday,
+					gender: response.gender,
+					oauth_provider: 'fb',
+					oauth_active: true,
+					oauth_id: response.id
+				}
+				request({
+					url: 'http://pupil.cl:3000/api/user',
+					method: 'post',
+					qs: data,
+					json: true
+				}, function(err, response, body){
+					console.log(response.statusCode);
+					if(!err){
+						res.json(body);
+					} else {
+						console.log(err);
+						res.json(500, {error: err});
+					}
+				});
+			} else {
+				console.log(res.error);
+				res.json(500, {error: res.error});
+			}
+		});
+	} else {
+		res.json(500, {error: 'Not fb token'});
+		console.log('Not fb token');
+	}
+}
+
+exports.login = function(req, res){
+	var User = req.db.models.user;
+	if(req.query.email && req.query.pass){
+		User.find({email: req.query.email}, function(err, items){
+			if(!err){
+				if(items[0].oauth_active){
+					if(items[0].oauth_id == req.query.pass){
+						internal_login(items[0], req);
+						res.json({msg: 'ok'});
+					} else {
+						res.json(400, {error: 'Email and User OAuth ID does not match'});
+					}
+
+				} else {
+					var md5 = crypto.createHash('md5');
+					md5.update(req.query.pass, 'utf8');
+					req.query.pass = md5.digest('utf8');
+
+					if(items[0].password == req.query.pass){
+						internal_login(items[0], req);
+					} else {
+						res.json(400, {error: 'Email or Password wrong'});
+					}
+				}
+			} else {
+				console.log(err);
+				res.json(500, {error: 'Something goes wrong with this user'});
+			}
+		});
+	} else {
+		res.json(500, {error: 'No user or password'});
+	}
+}
+
+exports.logout = function(req, res){
+	req.session.user = null;
+	res.json({msg: 'OK'});
+}
+
+function internal_login(user, req){
+	var user = {
+		id: user.id,
+		first_name: user.first_name,
+		last_name: user.last_name,
+		email: user.email
+	}
+	req.session.user = user;
+}
+
 
 exports.get = function(req, res){
 	var model = req.db.models[model_name];

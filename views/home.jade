@@ -63,7 +63,28 @@ html
 					if(response.authResponse){
 						var access_token = FB.getAuthResponse()['accessToken'];
 						console.log(access_token);
-						window.location = '/user/faebook/create_user?access_token=' + access_token	
+						//window.location = '/user/faebook/create_user?access_token=' + access_token
+						$.ajax({
+							url: 'http://pupil.cl:3000/api/user/facebook?access_token=' + access_token,
+							type: 'post',							
+							error: function(e1,e2,e3){ console.log('error llamando a api' +e1 + ' ' + e2 + ' ' +e3) },
+							success: function(data, status, jqXHR){
+								console.log('success');
+								console.log(data);
+								
+								var email = data.email;
+								var pass = data.oauth_id;
+
+								$.ajax({
+									url: 'http://pupil.cl:3000/api/user/login?email=' + email + '&pass=' + pass,
+									type: 'post',
+									error: function(e1,e2,e3){ console.log('Error login user: ' +e1 + ' ' + e2 + ' ' +e3); },
+									success: function(data){
+										window.location = '/courses';
+									}
+								});
+							}
+						});
 					}else{
 						alert('error');
 						console.log(response);
