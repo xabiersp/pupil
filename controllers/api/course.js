@@ -55,17 +55,16 @@ exports.add = function(req, res) {
 	}
 
 	model.create([{
-		first_name: req.query.first_name,
-		last_name: req.query.last_name,
-		second_last_name: req.query.second_last_name,
-		email: req.query.email
+		name: req.query.name,
+		initial: req.query.initial,
+		description: req.query.description
 	}], function(err, items) {
 		if(!err){
 			console.log('created');
-			res.send(items);
+			res.json(items);
 		} else {
 			console.log(err);
-			res.send(400);
+			res.json(400, {error: 'Error'});
 		}
 	});
 }

@@ -253,10 +253,44 @@ exports.course = function(req, res) {
 	return model.get(req.params.id, function(err, item){
 		if(!err){
 			item.getCourses(function(err, courses){
-				return res.send(courses);
+				return res.json(courses);
 			});
 		} else {
+			return res.json(500, 'Something goes wrong');
 			console.log(err);
 		}
 	});
 }
+
+exports.add_course = function(req, res) {
+	var model = req.db.models[model_name];
+	console.log(req.params);
+	model.get(req.params.id, function(err, user){
+		if(!err){
+			var Course = req.db.models.course;
+			Course.get(req.params.id_course, function(err, course){
+				if(!err){
+					user.getCourses(function(err, courses){
+						if(!err){
+							courses.push(course);
+							user.setCourses(courses);
+							res.json(user);
+						} else {
+							res.json(400);
+						}
+						
+					});
+					
+					
+				} else {
+					res.json(400, {error: 'Bad course id'});
+				}
+			});			
+		} else {
+			res.json(400, {error: 'Bad user id'});
+		}
+	});
+
+}
+
+

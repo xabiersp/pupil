@@ -138,6 +138,7 @@ app.delete('/api/course/:id', courseApi.delete);
 
 //USer
 app.get('/api/user/:id/course', userApi.course);
+app.post('/api/user/:id/course/:id_course', userApi.add_course);
 app.post('/api/user', userApi.create);
 app.post('/api/user/facebook', userApi.facebook);
 app.post('/api/user/login', userApi.login);

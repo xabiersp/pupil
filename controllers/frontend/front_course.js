@@ -37,21 +37,31 @@ exports.course = function(req, res){
 }
 
 exports.add = function(req, res){
-	process_form(req, res, 'course', function(form){
+	utils.process_form(req, res, 'course', function(form){
 		var data = {
 			name: form.data.name,
 			description: form.data.description,
-			initials: form.data.initials
+			initial: form.data.initial
 		}
-		request.post('http://pupil.cl:3000/api/course', {qs: data}, function(err, response, body){
+		request({
+			url: 'http://pupil.cl:3000/api/course', 
+			qs: data,
+			method: 'post',
+			json: true }, function(err, response, body){
 			if(!err && response.statusCode == 200){
-				console.log(body);
-
-				if(req.xhr){
-
-				} else {
-
-				}
+				console.log(body[0]);
+				request({
+					url: 'http://pupil.cl:3000/api/user/' + req.session.user.id + '/course/' + body[0].id,
+					method: 'post',
+					json: true
+				}, function(err, response, body){
+					if(!err && response.statusCode == 200){
+						res.redirect(req.path);
+					} else  {
+						res.send('error');
+						console.log(err);
+					}
+				});
 			}
 		});
 	});

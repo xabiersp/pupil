@@ -1,13 +1,14 @@
 extend layout
 block content
 	.menubar
-		.btn-group
-			a(href='/class/new/', aspex-action='dialog-open').btn-bar
-				i.add
-				| Add Class
-			a(href='/student/new/', dialog-action='open').btn-bar
-				i.add
-				| Add Student
+		if courses.length > 0
+			.btn-group
+				a(href='/course/new/', dialog-action='open').btn-bar
+					i.add
+					| Add Class
+				a(href='/student/new/', dialog-action='open').btn-bar
+					i.add
+					| Add Student
 	if courses
 		if courses.length > 0
 			section.courses
@@ -18,6 +19,16 @@ block content
 							h2 #{course.name}
 							p #{course.initial} | #{course.description}
 		else
-			p There's no course
+			section(style='text-align: center; width: 70%; margin: 5em auto;')
+				p 
+					|To start using Pupil you have to create a Course then you can add your students, tasks, grades and much more things. You can do it clicking next button.				
+				br				
+				a(href='/course/new', dialog-action='open').btn.btn-big Add new Course
+				br
+				btn-bar
+
+				p
+					|If you want to create more courses you can do that in the Add buttons.
+
 	else
 		p There's no course
