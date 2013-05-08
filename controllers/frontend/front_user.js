@@ -1,7 +1,7 @@
 var utils = require('./utils');
 
 exports.add = function(req, res){
-	process_form(req, res, 'user', function(form){
+	utils.process_form(req, res, 'user', function(form){
 		var data = {
 			first_name: form.data.first_name,
 			last_name: form.data.last_name,

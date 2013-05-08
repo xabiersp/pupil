@@ -44,8 +44,8 @@ function requiresLogin(req, res, next){
 }
 
 
-
 app.set('views', __dirname + '/views');
+app.set('view options', {layout: false});
 app.set('view engine', 'jade');
 
 app.use(orm.express("mysql://root:root@localhost/pupil", {
@@ -142,15 +142,14 @@ app.post('/api/user/:id/course/:id_course', userApi.add_course);
 app.post('/api/user', userApi.create);
 app.post('/api/user/facebook', userApi.facebook);
 app.post('/api/user/login', userApi.login);
+app.get('/api/user', userApi.find);
 
 
 app.all('/student/new', studentFrontend.add);
 
 app.all('/course/new', courseFrontend.add);
 
-
-
-app.get('/user/faebook/create_user', user.register_facebook);
+app.all('/user/new', userFrontend.add);
 
 app.get('/courses', requiresLogin, courseFrontend.courses);
 app.get('/course/:id', requiresLogin, courseFrontend.course);

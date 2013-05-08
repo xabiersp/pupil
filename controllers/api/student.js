@@ -1,5 +1,6 @@
 var orm = require('orm')
-  , model_name = 'student';
+  , model_name = 'student'
+  , u = require('./utils')
 
 
 exports.get = function(req, res){
@@ -10,9 +11,9 @@ exports.get = function(req, res){
 
 	return model.get(id, function(err, item){
 		if(!err) {
-			return res.send(item);
+			return res.json(u.api_res({ data: item }));
 		} else {
-			return res.send(console.log(err));
+			return res.json(u.api_res({ status: error, msg: err }));
 		}		
 	});
 }
@@ -27,12 +28,11 @@ exports.find = function(req, res) {
 		eval('query.' + keys[i] + ' = req.query.' + keys[i]);
 	}
 	
-	console.log(query);	
 	return model.find(query, 10, function(err, items){
 		if(!err){
-			return res.send(items);
+			return res.json(u.api_res({data: items}));
 		} else {
-			return console.log(err);
+			return res.json(u.api_res({ status: error, msg: err }));
 		}
 	});
 }
@@ -54,11 +54,10 @@ exports.add = function(req, res) {
 		email: req.query.email
 	}], function(err, items) {
 		if(!err){
-			console.log('created');
-			res.send(items);
+			return res.json(u.api_res({data: items}));
 		} else {
+			return res.json(u.api_res({ status: error, msg: err }));
 			console.log(err);
-			res.send(400);
 		}
 	});
 }
@@ -76,11 +75,11 @@ exports.update = function(req, res) {
 		return item.save(function(err){
 			if(!err){
 				console.log("update" + item.id);
+				return res.json(u.api_res({data: item}));
 			} else {
 				console.log(err);
+				return res.json(u.api_res({ status: error, msg: err }));
 			}
-
-			return res.send(item);			
 		});
 	});
 }

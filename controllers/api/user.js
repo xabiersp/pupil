@@ -2,6 +2,7 @@ var orm = require('orm')
   , model_name = 'user'
   , crypto = require('crypto')
   , request = require('request')
+  , u = require('./utils')
 
 
 exports.create = function(req, res){
@@ -54,7 +55,7 @@ exports.facebook = function(req, res){
 	if(req.query.access_token){
 		FB.setAccessToken(req.query.access_token);
 		FB.api('/me', function(response){
-			if(res && !res.error){
+			if(response && !response.error){
 				var data = {
 					first_name: response.first_name,
 					last_name: response.last_name,
@@ -71,21 +72,20 @@ exports.facebook = function(req, res){
 					qs: data,
 					json: true
 				}, function(err, response, body){
-					console.log(response.statusCode);
-					if(!err){
-						res.json(body);
+					if(!err && response.statusCode == 200){
+						res.json(u.api_res({ data: body }));
 					} else {
 						console.log(err);
-						res.json(500, {error: err});
+						res.json(u.api_res({status: 'error', msg: err}));
 					}
 				});
 			} else {
-				console.log(res.error);
-				res.json(500, {error: res.error});
+				console.log(response.error);
+				res.json(u.api_res({status: 'error', msg: response.error}));
 			}
 		});
 	} else {
-		res.json(500, {error: 'Not fb token'});
+		res.json(u.api_res({status: 'error', msg: 'Not fb token'}));
 		console.log('Not fb token');
 	}
 }
@@ -98,9 +98,9 @@ exports.login = function(req, res){
 				if(items[0].oauth_active){
 					if(items[0].oauth_id == req.query.pass){
 						internal_login(items[0], req);
-						res.json({msg: 'ok'});
+						res.json(u.api_res({ data: 'ok' }));
 					} else {
-						res.json(400, {error: 'Email and User OAuth ID does not match'});
+						res.json(u.api_res({status: 'error', msg: 'Email or Password wrong'}));
 					}
 
 				} else {
@@ -110,17 +110,19 @@ exports.login = function(req, res){
 
 					if(items[0].password == req.query.pass){
 						internal_login(items[0], req);
+						res.json(u.api_res({ data: 'ok' }));
+
 					} else {
-						res.json(400, {error: 'Email or Password wrong'});
+						res.json(u.api_res({status: 'error', msg: 'Email or Password wrong'}));
 					}
 				}
 			} else {
 				console.log(err);
-				res.json(500, {error: 'Something goes wrong with this user'});
+				res.json(u.api_res({status: 'error', msg: 'Something goes wrong with this user'}));
 			}
 		});
 	} else {
-		res.json(500, {error: 'No user or password'});
+		res.json(u.api_res({status: 'error', msg: 'No user or password' }));
 	}
 }
 
@@ -165,20 +167,18 @@ exports.get = function(req, res){
 
 exports.find = function(req, res) {
 	var model = req.db.models[model_name];
-
 	var keys = Object.keys(req.query);
 	var query = {};
-	console.log(req.query);
+
 	for(i in keys){
 		eval('query.' + keys[i] + ' = req.query.' + keys[i]);
 	}
-	
-	console.log(query);	
+
 	return model.find(query, 10, function(err, items){
 		if(!err){
-			return res.send(items);
+			return res.json(u.api_res({data: items}));
 		} else {
-			return console.log(err);
+			return res.json(u.api_res({status: 'error', msg: err}))
 		}
 	});
 }

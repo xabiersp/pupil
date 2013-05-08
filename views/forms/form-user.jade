@@ -1,0 +1,12 @@
+extends ../layout-offline
+block content
+	p
+		| Complete the fields and we will send you an email to confirm your data. You can feel secure that your data
+		| is gonna be good with us. We're not gona share any data with anyone.
+	.form-content
+		form(action='/user/new', method='post')
+			!= form
+			.field.left
+				a(href='/user/new', dialog-action='open').mini Advance parameters
+			.buttons-bar
+				button(type='submit').btn Enviar

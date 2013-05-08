@@ -39,32 +39,45 @@ function login(){
 	FB.login(function(response){
 		if(response.authResponse){
 			var access_token = FB.getAuthResponse()['accessToken'];
-			console.log(access_token);
+			
 			$.ajax({
 				url: 'http://pupil.cl:3000/api/user/facebook?access_token=' + access_token,
 				type: 'post',							
 				error: function(e1,e2,e3){ 
 					$.easyNotification({text: 'Error creating user', error: true});
-					console.log('error llamando a api' +e1 + ' ' + e2 + ' ' +e3) 
+					console.log('Error llamando a API: ' +e1 + ' ' + e2 + ' ' +e3) 
 				},
 				success: function(data, status, jqXHR){
-					if(data.oauth_id){
-						$.ajax({
-							url: 'http://pupil.cl:3000/api/user/login?email=' + data.email + '&pass=' + data.oauth_id,
-							type: 'POST',
-							error: function(e1,e2,e3){ 
-								$.easyNotification({
-									text: 'Error login user', 
-									error: true,
-									autoClose: true});
-								console.log('Error login user: ' +e1 + ' ' + e2 + ' ' +e3); 
-							},
-							success: function(data, status, jqXHR){
-								window.location = '/courses';
-							}
+					if(data.status == 'ok'){
+						if(data.data.oauth_id){
+							$.ajax({
+								url: 'http://pupil.cl:3000/api/user/login?email=' + data.data.email + '&pass=' + data.data.oauth_id,
+								type: 'POST',
+								error: function(e1,e2,e3){ 
+									$.easyNotification({
+										text: 'Error login user', 
+										error: true,
+										autoClose: true});
+									console.log('Error login user: ' +e1 + ' ' + e2 + ' ' +e3); 
+								},
+								success: function(data, status, jqXHR){
+									console.log(data);
+									if(data.status == 'ok'){										
+										window.location = '/courses';
+									} else {
+										$.easyNotification({text: data.message, error: true, autoClose: true });
+									}
+										
+								}
+							});
+						}
+					} else {
+						$.easyNotification({
+							text: data.message,
+							error: true,
+							autoClose: true
 						});
-
-					}								
+					}					
 				}
 			});
 		}else{
