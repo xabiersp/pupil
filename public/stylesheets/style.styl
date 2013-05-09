@@ -95,6 +95,11 @@ ul li
 	background-color rgba(#3b5998, 1)
 	color #fff
 
+.center-section
+	display block
+	margin 0 auto;
+	text-align left
+	width 35em
 
 .dialog_blackout
 	background rgba(#000, 0.1)
@@ -133,13 +138,17 @@ ul li
 
 .form-content 
 	display: inline-block
+	margin 0 auto
+
 .form-content form .field
 	color #333
 	margin-bottom 0.5em
 
 .form-content form .field label
 	display inline-block
-	font-size 0.9em
+	font-size 1em
+	padding-right 1em
+	text-align right
 	width 10em
 
 .form-content form .required label
@@ -155,13 +164,21 @@ ul li
 
 .form-content form .field input[type="text"], 
 .form-content form .field textarea,
-.form-content form .field input[type="password"]
+.form-content form .field input[type="password"],
+.form-content form .field input[type="date"]
 	padding 0.3em
 	width 20em
+
+.form-content form .field select
+	padding 0.3em
+	width 21em
 
 .form-content form .buttons-bar
 	padding 1em 0 0.3em
 	text-align right
+
+.form-content form fieldset
+	border 0
 
 .container
 	display: inline-block
@@ -189,7 +206,6 @@ ul li
 	display inline-block
 	height 500px
 	padding-left 0.8em
-	width 83%
 
 .content .home-content
 	margin 0 auto
@@ -312,6 +328,8 @@ header nav ul li
 header nav ul li a
 	padding 0.2em 1em
 
+p
+	text-align left
 
 footer
 	bottom 0px
@@ -320,6 +338,10 @@ footer
 	text-align center
 	position absolute
 	width: 100%
+
+footer .content p
+	text-align center;
+
 
 #easyNotification
 	background-color #f3f3f3;

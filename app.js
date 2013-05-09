@@ -110,7 +110,7 @@ app.listen(3000)
 
 
 app.get('/', function (req, res) {
-	res.render('home', {title: 'Home'});
+	res.render('landing', {title: 'Home'});
 });
 
 

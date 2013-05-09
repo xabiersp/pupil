@@ -1,12 +1,13 @@
-extends ../layout-offline
+extends ../layout-out
 block content
-	p
-		| Complete the fields and we will send you an email to confirm your data. You can feel secure that your data
-		| is gonna be good with us. We're not gona share any data with anyone.
-	.form-content
-		form(action='/user/new', method='post')
-			!= form
-			.field.left
-				a(href='/user/new', dialog-action='open').mini Advance parameters
-			.buttons-bar
-				button(type='submit').btn Enviar
+	.center-section
+		h2 Register like a teacher
+		p
+			| Complete the fields and we will send you an email to confirm your data. You can feel secure that your data
+			| is gonna be good with us. We're not gona share any data with anyone.
+		br
+		.form-content
+			form(action='/user/new', method='post')
+				!= form
+				.buttons-bar
+					button(type='submit').btn Enviar

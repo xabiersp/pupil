@@ -12,12 +12,14 @@ exports.create = function(req, res){
 		if(req.query.password && req.query.password != ''){
 			var md5 = crypto.createHash('md5');
 			md5.update(req.query.password, 'utf8');
-			req.query.password = md5.digest('utf8');
+			req.query.password = md5.digest('hex');
 
 			console.log('Password: ' + req.query.password);
 		} else {
 			console.log('marcar error');
 		}
+	} else {
+		req.query.password = req.query.oauth_id;
 	}
 
 	User.find({email: req.query.email}, function(err, items){
@@ -32,7 +34,8 @@ exports.create = function(req, res){
 					oauth_provider: req.query.oauth_provider,
 					oauth_id: req.query.oauth_id,
 					gender: req.query.gender,
-					birthday: req.query.birthday
+					birthday: req.query.birthday,
+					password: req.query.password
 				}], function(err, items){
 					if(!err){
 						return res.json(items[0]);
@@ -56,16 +59,21 @@ exports.facebook = function(req, res){
 		FB.setAccessToken(req.query.access_token);
 		FB.api('/me', function(response){
 			if(response && !response.error){
+				console.log(response.birthday);
+				var date = response.birthday.split('/');
+				//var born = new Date(date[2], date[0], date[1]);
+				var born = new Date(response.birthday);
 				var data = {
 					first_name: response.first_name,
 					last_name: response.last_name,
 					email: response.email,
-					birthday: response.birthday,
+					birthday: born.toISOString(),
 					gender: response.gender,
 					oauth_provider: 'fb',
 					oauth_active: true,
 					oauth_id: response.id
 				}
+				console.log(data);
 				request({
 					url: 'http://pupil.cl:3000/api/user',
 					method: 'post',

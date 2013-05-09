@@ -5,7 +5,7 @@ module.exports = function(db, cb){
 		//properties
 		first_name:	String,
 		last_name: String,
-		birthday: String,
+		birthday: {type: 'date', time: false},
 		gender: String,
 		photo: String,
 		oauth_provider: String,

@@ -23,10 +23,24 @@ exports.student_form = forms.create({
 exports.user_form = forms.create({
 	first_name: fields.string({required: true}),
 	last_name: fields.string({required: true}),
+	birthday: fields.date({required: true, widget: widgets.date()}),
+	gender: fields.string({
+		choices: {select: '-- Select your gender --', male: 'Male', female: 'Female'}, 
+		widget: widgets.select(), 
+		required: true,
+		validators: [function(form, field, callback) {
+			if(field.data === 'select') {
+				callback('Please select your gender');
+			} else {
+				callback();
+			}
+		}]
+	}),
 	email: fields.string({required: true}),
 	password: fields.password({required: true}),
 	confirm: fields.password({
 		required: true,
+		label: 'Confirm password',
 		validators: [validators.matchField('password')]
 	})
 });
